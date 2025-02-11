@@ -37,8 +37,6 @@ if (isset($_POST['Utilisateur']) && isset($_POST['mdp'])) {  // on vérifie si l
 
     if ($utilisateur) {
         echo 'Connexion réussie !';
-        // Rediriger l'utilisateur vers la page de mon choix
-        header('Location: enterdata.php');
     } else {
         echo "Nom d'utilisateur ou mot de passe incorrect.";
     }
@@ -49,7 +47,7 @@ if (isset($_POST['Utilisateur']) && isset($_POST['mdp'])) {  // on vérifie si l
 
 <body>
    
-<form action="accespro.php" method="post">
+<form action="entrerdonnées.php" method="post">
  Utilisateur: <input type="text" name="Utilisateur" /><br />
  Mot de passe: <input type="Mot de passe" name="mdp" /><br />
 <input type="submit" name="connexion" value="Connexion" />

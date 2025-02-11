@@ -24,24 +24,9 @@ try {
 
 <?php
 
-if (isset($_POST['Utilisateur']) && isset($_POST['mdp'])) {  // on vérifie si les champs sont bien tapés
+if (isset($_POST['Utilisateur'])) {
     $nom = $_POST['Utilisateur'];
-    $mdp = $_POST['mdp'];
-
-    // la connexion à la base de données se fait maintenant apres avoir verifier qu'un utilisateur existe et un mdp sont bien tapés
-    include ('db_connect.php');
-
-    $sql = "SELECT * FROM users WHERE user = '$nom' AND mdp = '$mdp'";
-    $resultat = $db_connexion->query($sql);
-    $utilisateur = $resultat->fetch();
-
-    if ($utilisateur) {
-        echo 'Connexion réussie !';
-        // Rediriger l'utilisateur vers la page de mon choix
-        header('Location: enterdata.php');
-    } else {
-        echo "Nom d'utilisateur ou mot de passe incorrect.";
-    }
+    $nom = $_POST['mdp'];
 }
 
 ?>
@@ -49,7 +34,7 @@ if (isset($_POST['Utilisateur']) && isset($_POST['mdp'])) {  // on vérifie si l
 
 <body>
    
-<form action="accespro.php" method="post">
+<form action="entrerdonnées.php" method="post">
  Utilisateur: <input type="text" name="Utilisateur" /><br />
  Mot de passe: <input type="Mot de passe" name="mdp" /><br />
 <input type="submit" name="connexion" value="Connexion" />

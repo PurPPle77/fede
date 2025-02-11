@@ -23,35 +23,34 @@ try {
 
 
 <?php
-
-if (isset($_POST['Utilisateur']) && isset($_POST['mdp'])) {  // on vérifie si les champs sont bien tapés
+if (!empty($_POST['Utilisateur']) && !empty($_POST['mdp'])) {  // Vérification des champs non vides
     $nom = $_POST['Utilisateur'];
     $mdp = $_POST['mdp'];
 
-    // la connexion à la base de données se fait maintenant apres avoir verifier qu'un utilisateur existe et un mdp sont bien tapés
     include ('db_connect.php');
 
-    $sql = "SELECT * FROM users WHERE user = '$nom' AND mdp = '$mdp'";
-    $resultat = $db_connexion->query($sql);
-    $utilisateur = $resultat->fetch();
+    // Utilisation d'une requête préparée pour éviter les injections SQL
+    $sql = 'SELECT * FROM users WHERE user = :nom AND mdp = :mdp';
+    $stmt = $db_connexion->prepare($sql);
+    $stmt->execute(['nom' => $nom, 'mdp' => $mdp]);
+    $utilisateur = $stmt->fetch();
 
     if ($utilisateur) {
         echo 'Connexion réussie !';
-        // Rediriger l'utilisateur vers la page de mon choix
-        header('Location: enterdata.php');
     } else {
         echo "Nom d'utilisateur ou mot de passe incorrect.";
     }
+} else {
+    echo 'Veuillez remplir tous les champs.';
 }
-
 ?>
 
 
 <body>
    
-<form action="accespro.php" method="post">
+<form action="entrerdonnées.php" method="post">
  Utilisateur: <input type="text" name="Utilisateur" /><br />
- Mot de passe: <input type="Mot de passe" name="mdp" /><br />
+ Mot de passe: <input type="password" name="mdp" /><br />
 <input type="submit" name="connexion" value="Connexion" />
 </form>
 

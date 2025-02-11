@@ -37,8 +37,8 @@ if (isset($_POST['Utilisateur']) && isset($_POST['mdp'])) {  // on vérifie si l
 
     if ($utilisateur) {
         echo 'Connexion réussie !';
-        // Rediriger l'utilisateur vers la page de mon choix
-        header('Location: enterdata.php');
+        // Rediriger l'utilisateur vers la page d'accueil
+        header('Location: entrerdonnees.php');
     } else {
         echo "Nom d'utilisateur ou mot de passe incorrect.";
     }

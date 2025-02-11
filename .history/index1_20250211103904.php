@@ -106,21 +106,34 @@
      <!-- Récupération des données depuis la base de données -->
 <?php
 include 'db_connect.php';
-$sql = 'SELECT titre, accroche, texte, date_publication FROM articles ORDER BY date_publication DESC LIMIT 3';  // ici je crée une requete sql qui me permet de récupérer les 3 derniers articles de la table "articles" de la base de données et de les trier par date de publication décroissante.
-$articles = $db_connexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);  // fetchAll() est une METHODE de PDO qui permet de récupérer toutes les lignes d'un jeu de résultats sous forme de tableau associatif. Un tableau associatif est un tableau dont les clés sont des chaînes de caractères qui correspondent aux noms des colonnes de la table.
-?>
+$sql = 'SELECT titre, accroche, texte FROM article  ';
+$article = $db_connexion->query($sql)->fetchAll();
 
-<!-- ici je cree le tableau "article" qui contient les données de la table "articleS" de la base de données 
- et je les affiche dans la page index.php. Je dois aussi mettre le foreach ici pour englober les données et non pas seul en haut, ce qui n'a pas de sens vu que ca foreach rien...cela permet aussi de générer le code de la classe tuile et donc d'en créer une nouvelle suivant la limite que j'ai fixée dans la requete sql. Une seule "tuile" suffit aussi car c'est bien le foreach qui énumère le nombre d'article que j'ai dans ma bdd -->
- <?php foreach ($articles as $article): ?> 
+foreach ($article as $article) {
+  {
+    
+
+?>
       <div class="tuile">
         <img src="./images/actu1.jpg" alt="Image Actualité 1">
         <h3><?php echo $article['titre']; ?></h3>
         <p><?php echo $article['accroche']; ?></p>
         <p><?php echo $article['texte']; ?></p>
-        <p>Le <?php echo $article['date_publication']; ?></p>
       </div>
-  <?php endforeach; ?>
+
+      <!-- Deuxième tuile -->
+      <div class="tuile">
+        <img src="./images/actu2.jpg" alt="Image Actualité 2">
+        <h3>Titre Actualité</h3>
+        <p>Début texte news...</p>
+      </div>
+
+      <!-- Troisième tuile -->
+      <div class="tuile">
+        <img src="./images/actu3.jpg" alt="Image Actualité 3">
+        <h3>Titre Actualité</h3>
+        <p>Début texte news...</p>
+      </div>
     </div>
   </div>
 
