@@ -143,6 +143,17 @@ $article = $db_connexion->query($sql)->fetch();
 
   <div class="redtopmargin"></div>
 
+  <aside class="pub">
+
+    <a href="./images/pub1.jpg" data-lightbox="pub1" data-title="Une image"><img src="./images/pub1.jpg"
+        alt="Publicité 1"></a>
+
+    <a href="./images/pub2.jpg" data-lightbox="pub2"><img src="./images/pub2.jpg" alt="Publicité 2"></a>
+
+  </aside>
+
+  <div class="redtopmargin"></div>
+
   <footer id="footer">
     <!-- Section gauche -->
     <div class="footnav">

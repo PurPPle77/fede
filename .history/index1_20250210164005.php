@@ -159,6 +159,40 @@ $article = $db_connexion->query($sql)->fetch();
     <!-- Section droite : Accès professionnel -->
     <div class="accèspro">
       <img src="./images/padlock.png" alt="Cadenas">
+      <a href="entrerdonnées.php">
+        <p>Accès professionnel</p>
+      </a>
+    </div>
+    </div>
+  </div>
+
+  <aside class="pub">
+
+    <a href="./images/pub1.jpg" data-lightbox="pub1" data-title="Une image"><img src="./images/pub1.jpg"
+        alt="Publicité 1"></a>
+
+    <a href="./images/pub2.jpg" data-lightbox="pub2"><img src="./images/pub2.jpg" alt="Publicité 2"></a>
+
+  </aside>
+
+  <div class="redtopmargin"></div>
+
+  <footer id="footer">
+    <!-- Section gauche -->
+    <div class="footnav">
+      <nav aria-label="Liens">
+        <ul>
+          <li><a href="QuiSommesNous.html">Qui sommes nous ?</a></li>
+          <li><a href="ContactForm.html">Contactez-nous</a></li>
+          <li><a href="Confidentialite_RGPD_Cookies.html">Confidentialité/RGPD</a></li>
+          <li><a href="CGU.html">Conditions d’utilisation</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Section droite : Accès professionnel -->
+    <div class="accèspro">
+      <img src="./images/padlock.png" alt="Cadenas">
       <a href="pagepro.html">
         <p>Accès professionnel</p>
       </a>
