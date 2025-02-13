@@ -1,0 +1,571 @@
+/* ?CODE COMMUN A TOUTES PAGES */
+/* ############################################################################################# */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1em;
+  background-color: rgb(255, 255, 255);
+  font-family: "franklin Gothic Book";
+}
+
+#header1 {
+  display: flex; /* Active le mode flexbox */
+  align-items: center; /* Aligne verticalement au centre */
+  justify-content: space-between; /* Espace entre les éléments pour flexbox*/
+  padding: 10px; /* Espacement interne */
+  margin: 10px;
+  background-color: #f4f4f4; /* Couleur de fond pour mieux visualiser */
+  border: 2px solid #030303; /* Correct : bordure de 2px, solide, couleur rouge */
+}
+
+#mainlogo {
+  width: 250px; /* Ajustez la taille selon vos besoins */
+  height: auto; /* Maintient les proportions */
+  padding: 20px;
+}
+
+#maintitle {
+  width: 2000px;
+  font-size: 10rem;
+  margin: 8px;
+  box-shadow: 10px 10px 10px #231f20;
+  background: linear-gradient(
+    45deg,
+    #003798,
+    #ef3340
+  ); /* Dégradé du bleu au rouge */
+  color: white; /*couleur du texte*/
+  font-weight: bold;
+  text-align: center; /* Centrage horizontal du texte */
+  padding: 10px 20px; /* Espacement interne (haut/bas, gauche/droite) */
+  border-radius: 15px; /* Coins arrondis */
+}
+
+.addusericon {
+  color: #231f20;
+  text-align: center; /* Centre l'image et le texte */
+  font-size: 34px;
+  margin: 20px; /* Ajoute un peu d'espace autour */
+}
+
+.addusericon img,
+.loginicon img {
+  height: 200px;
+}
+
+#menu-vignette:hover #lienmenu {
+  display: block;
+}
+
+#menu {
+  font-size: 120px;
+}
+
+#lienmenu {
+  display: none; /* Caché par défaut */
+  position: absolute; /* Afficher le menu direct pres du parent */
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  font-size: 120px;
+  padding: 10px;
+}
+
+.loginicon {
+  color: #ef3340;
+  text-align: center; /* Centre l'image et le texte */
+  font-size: 34px;
+  margin: 20px; /* Ajoute un peu d'espace autour */
+  margin-right: 50px; /* Espacement entre les icônes */
+}
+.arianeetlogo {
+  display: flex; /* Active le mode flexbox */
+  align-items: center; /* Aligne verticalement au centre */
+  font-size: 30px;
+  justify-content: space-between; /* Espace entre les éléments */
+  padding: 10px 20px; /* Espacement interne */
+  margin: 10px;
+}
+.arianeetlogo nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* Supprime les puces des listes */
+}
+
+.arianeetlogo ul {
+  display: flex; /* Les icônes des réseaux sociaux s'alignent horizontalement */
+  gap: 70px; /* Espace entre chaque icône */
+  margin: 0; /* Enlève les marges */
+  padding: 0; /* Enlève les espacements */
+}
+
+.arianeetlogo ul li {
+  list-style: none; /* Supprime les puces */
+}
+
+.arianeetlogo ul li a {
+  font-size: 100px; /* Taille des icônes plus grande */
+  color: #555; /* Couleur des icônes */
+  /* transition: color 0.3s ease; Animation pour un hover doux */ /* !pas bien compris */
+}
+
+.arianeetlogo ul li a:hover {
+  color: #003798; /* Change la couleur au survol */
+}
+
+/* ?FIN CODE COMMUN A TOUTES PAGE */
+/* ############################################################################################# */
+
+/* ?SECTION MAIN INDEX*/
+/* ############################################################################################# */
+.indexarticle {
+  margin: 10px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  display: flex; /* Active le mode flexbox */
+  align-items: center; /* Aligne verticalement au centre */
+  justify-content: space-evenly; /* Espace entre les éléments */
+  padding: 10px 20px; /* Espacement interne */
+}
+
+.indexarticle img {
+  width: 100%; /* Définit la largeur à de son conteneur (modifiable) */
+  max-width: 1300px; /* Limite la largeur maximale */
+  height: auto; /* Maintient le ratio de l'image */
+}
+
+.indexarticle a:hover {
+  box-shadow: 10px 10px 5px rgba(35, 31, 32, 0.5); /* Applique l'ombre au survol */
+}
+
+.indexarticle a {
+  position: relative; /* Nécessaire pour positionner le texte au-dessus de l'image */
+  text-decoration: none; /* Retire le soulignement des liens */
+}
+
+.indexarticle p {
+  position: absolute; /* Positionnement au-dessus de l'image*/ /*!TRES RARE */
+  bottom: 20px; /* Positionne le texte près du bas de l'image */
+  left: 50%; /* Centre horizontalement */
+  width: 70%;
+  height: 15%;
+  line-height: 150px;
+  transform: translateX(
+    -50%
+  ); /* Ajustement fin pour centrer parfaitement */ /* *!pas bien compris ça */
+  background-color: #003798;
+  color: white;
+  padding: 10px 20px; /* Espacement interne */
+  font-size: 70px; /* Taille du texte */
+  font-weight: bold; /* Texte en gras */
+  text-align: center; /* Centre le texte dans la bulle */
+  border: 2px solid #ef3340;
+  border-radius: 12px; /* Bordures arrondies pour l'effet bulle */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ?FIN SECTION MAIN INDEX */
+/* ############################################################################################# */
+
+/* ?SECTION ACTUALITÉS */
+/* ############################################################################################# */
+.actualité {
+  width: 100%; /* Prend toute la largeur disponible */
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4; /* Couleur de fond */
+  border: 1px solid #231f20; /* Bordure fine */
+}
+
+/* Titre de la section */
+.titreactu {
+  font-size: 70px; /* Taille du texte */
+  font-weight: bold;
+  text-align: center;
+  color: #231f20;
+}
+
+/* Conteneur des tuiles */
+.tuile-container {
+  display: flex; /* Active le mode Flexbox */
+  justify-content: space-evenly; /* Espace uniforme entre les tuiles */
+  align-items: center; /* Centre les tuiles verticalement */
+  gap: 100px; /* Espacement exact entre les tuiles */
+}
+
+.tuile {
+  width: 500px; /* Largeur fixe des tuiles */
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ddd; /* Bordure fine */
+  border-radius: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  transition: transform 0.3s ease; /* Effet au survol */
+}
+
+.tuile:hover {
+  transform: scale(1.05); /* Agrandissement au survol */
+}
+
+.tuile img {
+  width: 100%; /* Image prend toute la largeur de la tuile */
+  height: auto;
+  border-radius: 20px; /* Coins arrondis */
+  margin-bottom: 10px;
+}
+
+.tuile h3 {
+  font-size: 50px;
+  color: #231f20;
+  margin-bottom: 5px;
+}
+
+.tuile p {
+  font-size: 40px;
+  color: #231f20;
+}
+
+/* ?FIN SECTION ACTUALITÉS */
+/* ############################################################################################# */
+
+/* ?SECTION PUBLICITÉ */
+/* ############################################################################################# */
+.pub {
+  display: flex; /* Active le mode flexbox */
+  width: 100%; /* Prend toute la largeur disponible */
+  justify-content: space-evenly; /* Espace uniforme entre les éléments */
+  align-items: center; /* Aligne les images au centre verticalement */
+  margin-top: 50px; /* Espacement au-dessus de la section */
+  padding: 20px; /* Espacement interne */
+  background-color: #f4f4f4; /* Couleur de fond */
+  border: 1px solid #231f20; /* Bordure fine */
+}
+
+.pub img {
+  width: 100%;
+  max-width: 600px; /* Largeur maximale pour éviter des images trop grandes */
+  height: auto; /* Maintient le ratio d'aspect des images */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère */
+  transition: transform 0.3s ease; /* Animation au survol */
+}
+
+.pub img:hover {
+  transform: scale(1.05); /* Agrandissement au survol */
+}
+
+/* ?FIN SECTION PUBLICITÉ */
+/* ############################################################################################# */
+
+.redtopmargin {
+  background-color: #ef3340;
+  height: 50px;
+  width: 100%;
+}
+
+/* ?SECTION FOOTER */
+/* ############################################################################################# */
+#footer {
+  background-color: #003798; /* Bleu de fond */
+  color: white;
+  padding: 20px 40px;
+  display: flex; /* Organisation horizontale */
+  justify-content: space-between; /* Espace entre sections */
+  align-items: center; /* Centrer verticalement les éléments */
+  position: relative; /* Nécessaire pour positionner les icônes sociales */
+  /* min-height: 150px; Hauteur minimum du footer */
+}
+
+/* Section gauche : Navigation */
+.footnav {
+  flex: 1; /* Prend tout l'espace possible à gauche */
+}
+
+.footnav ul {
+  list-style: none; /* Supprimer les puces */
+  padding: 0;
+  margin: 0;
+}
+
+.footnav ul li {
+  margin: 10px 0; /* Espacement entre les liens */
+}
+
+.footnav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 45px;
+  transition: color 0.3s ease;
+}
+
+.footnav ul li a:hover {
+  text-decoration: underline;
+  color: #ffcc00; /* Optionnel : Couleur au survol */
+}
+
+/* Section droite : Accès professionnel */
+.accèspro {
+  display: flex;
+  align-items: center; /* Cadenas et texte alignés verticalement */
+  gap: 10px; /* Espacement entre cadenas et texte */
+  justify-content: center;
+}
+
+.accèspro p {
+  font-size: 30px;
+  margin: 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Positionnement cadenas */
+.accèspro img {
+  width: 60px; /* Taille du cadenas */
+  height: auto;
+}
+
+/* Section des icônes sociales */
+.social {
+  position: absolute; /* Positionnement absolu */
+  top: 10px; /* Placer les icônes en haut */
+  right: 40px; /* Placer les icônes à droite */
+  background-color: white; /* Fond blanc */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; /* Espacement entre les icônes */
+}
+
+.social ul {
+  display: flex; /* Icônes alignées horizontalement */
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.social ul li a {
+  color: #003798; /* Bleu pour les icônes sur fond blanc */
+  font-size: 44px; /* Taille des icônes */
+  margin-right: 25px;
+}
+
+.social ul li a:hover {
+  color: #ff3d3d; /* Optionnel : Couleur au survol des icônes */
+}
+
+/* Texte centré en bas */
+p#textecentré {
+  position: absolute;
+  bottom: 10px; /* Placer tout en bas */
+  left: 50%; /* Centrer horizontalement */
+  transform: translateX(-50%); /* Corriger le centrage */
+  font-size: 30px;
+  margin: 0;
+  text-align: center;
+}
+/* ?FIN SECTION FOOTER */
+/* ############################################################################################# */
+
+/*! ############################################################################################# */
+/* ?DEBUT PAGE ACTIVITÉS */
+/* !############################################################################################# */
+
+h1#titreactivite {
+  height: auto;
+  padding: 50px;
+  margin: 20px;
+  margin-top: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 250px;
+  font-weight: bold;
+  color: #003798;
+  border: 4px solid #ef3340;
+  background-color: #f4f4f4;
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.573);
+}
+
+h2#titrechoixactiv {
+  height: auto;
+  padding: 36px;
+  margin: 20px;
+  margin-top: 150px;
+  margin-bottom: 0px;
+  max-width: 1175px;
+  text-align: center;
+  font-size: 70px;
+  font-weight: bold;
+  color: #ffffff;
+  border: 4px solid #ef3340;
+  background-color: #003798;
+}
+
+.cocheactiv {
+  display: flex; /* Conteneur principal */
+  text-align: center; /* Centre les éléments horizontalement */
+  background-color: #f4f4f4;
+  height: 320px; /* Hauteur du conteneur */
+  line-height: 250px; /* Centre verticalement via la hauteur de ligne */
+  padding: 33px;
+}
+
+label {
+  display: inline-block; /* Aligne les labels sur la même ligne */
+  font-size: 130px; /* Taille du texte augmentée */
+  color: #003798; /* Couleur du texte */
+  margin-right: 387px;
+  cursor: pointer; /* Rend cliquable le label */
+  vertical-align: middle; /* Aligne le texte avec la case */
+}
+
+.coche {
+  transform: scale(8); /* Grossit les cases */
+  margin-right: 48px; /* Réduit l'espace entre la case et le texte */
+  vertical-align: middle; /* Aligne les cases avec le texte */
+  position: relative; /* Permet un meilleur contrôle de positionnement */
+}
+
+.cocheactiv > div {
+  display: flex; /* Traite chaque paire comme un bloc individuel */
+  margin: 0 30px; /* Ajoute un espace horizontal entre chaque groupe */
+  margin-left: 30px;
+}
+
+h3#choixsscat {
+  height: auto;
+  padding: 36px;
+  margin: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  max-width: 1175px;
+  text-align: center;
+  font-size: 70px;
+  font-weight: bold;
+  color: #ffffff;
+  border: 4px solid #ef3340;
+  background-color: #003798;
+}
+
+/* Conteneur principal */
+.checkbox-container {
+  display: flex;
+  flex-wrap: wrap; /* Permet de passer sur plusieurs lignes */
+  justify-content: space-evenly; /* Espacement uniforme entre les éléments */
+  align-items: center; /* Centre les éléments verticalement */
+  background-color: #f4f4f4; /* Fond gris clair */
+  height: 570px; /* Hauteur fixe */
+  width: 100%; /* Largeur */
+  padding: 10px;
+  overflow-y: auto; /* Défilement vertical si nécessaire */
+  overflow-x: hidden; /* Pas de défilement horizontal */
+  row-gap: 20px; /* Espacement vertical entre les lignes */
+}
+
+/* Style des labels (checkbox + texte) */
+.checkbox-container label {
+  flex: 1 1 calc(20% - 20px); /* 20% de largeur avec espacement ajusté */
+  max-width: calc(
+    20% - 20px
+  ); /* Limite la largeur maximale pour 5 labels par ligne */
+  display: flex;
+  flex-direction: column; /* Empile la case et le texte */
+  gap: 10px;
+  align-items: center; /* Centre le texte et la case horizontalement */
+  margin: 10px; /* Espacement entre les labels */
+  font-size: 70px; /* Taille du texte */
+  color: #003798; /* Couleur du texte */
+  cursor: pointer; /* Pointeur interactif */
+}
+
+/* Style personnalisé pour les cases */
+.checkbox-container input.custom-checkbox {
+  appearance: none; /* Supprime le style natif */
+  width: 60px; /* Largeur de la case */
+  height: 60px; /* Hauteur de la case */
+  border: 2px solid #555; /* Bordure par défaut */
+  background-color: #fff; /* Fond blanc */
+  margin-bottom: 5px; /* Espace entre la case et le texte */
+  cursor: pointer; /* Curseur cliquable */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Animation */
+}
+.checkbox-container input.custom-checkbox:checked {
+  background-color: #003798; /* Fond bleu quand cochée */
+  border-color: #ef3340; /* Bordure rouge quand cochée */
+}
+
+#zonenombre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  padding: 100px;
+  background-color: #f4f4f4;
+}
+
+.nombreactivite {
+  text-align: left;
+  font-size: 90px;
+  font-weight: bold;
+  padding: 8px;
+  color: #ffffff;
+  background-color: #003798;
+  border: 1px solid #231f20;
+  width: 20%;
+}
+
+.zonevideo {
+  display: grid; /* Active la grille */
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* 4 colonnes égales et 1fr pour "fraction" (égalise) */
+  gap: 60px; /* Espacement entre les cartes */
+  padding: 100px; /* Ajoute un espace autour de la grille */
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  height: 2500px;
+  overflow-y: auto;
+  background-color: #f4f4f4; /* Optionnel : Couleur de fond de la grille */
+}
+
+.vignette {
+  text-align: center; /* Centrer le contenu textuel pour le lien */
+  background: white; /* Fond des cartes (pour se détacher du fond de la grille) */
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre discrète */
+}
+
+video {
+  width: 100%; /* Les vidéos occupent toute la largeur de leur conteneur */
+  height: auto; /* Maintient le ratio des vidéos */
+  border-radius: 6px;
+}
+
+.titrevideo {
+  font-size: 60px;
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 20px;
+  color: #003798;
+}
+
+.lienactivite {
+  font-size: 60px;
+  text-align: center;
+  display: block; /* Force le lien à occuper toute la largeur */
+  margin-top: 5px;
+  color: #003798;
+  text-decoration: none; /* Supprime le soulignement */
+}
+
+.lienactivite:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol */
+}
