@@ -34,7 +34,7 @@
                     // la connexion à la base de données se fait maintenant apres avoir verifié qu'un utilisateur existe et un mdp sont bien entrés
                     include ('db_connect.php');
                     $hachage = hash('sha256', $mdp);
-                    $sql = "SELECT * FROM registered WHERE username = '$nom' AND mdpkey = '$hachage'";
+                    $sql = "SELECT * FROM registered WHERE username = '$nom' AND mdpkey = '$mdp'";
                     $resultat = $db_connexion->query($sql);  // query est une fonction SQL et sert a faire une requête à la base de données et on stocke le resultat dans la variable resultat
                     $utilisateur = $resultat->fetch();  // fetch est aussi une fonction SQL et  sert a récupérer les données de la base de données
 

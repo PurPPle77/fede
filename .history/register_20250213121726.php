@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Se connecter/S'enregistrer</title>
+    <title>Formulaire d'inscription</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
-
-
-
 <body>
+
+
 <div class="container mt-5">
         <h2>Déjà inscrit, connectez-vous</h2>
         <form action="register.php" method="post">
@@ -33,8 +32,8 @@
 
                     // la connexion à la base de données se fait maintenant apres avoir verifié qu'un utilisateur existe et un mdp sont bien entrés
                     include ('db_connect.php');
-                    $hachage = hash('sha256', $mdp);
-                    $sql = "SELECT * FROM registered WHERE username = '$nom' AND mdpkey = '$hachage'";
+
+                    $sql = "SELECT * FROM registered WHERE username = '$nom' AND mdpkey = '$mdp'";
                     $resultat = $db_connexion->query($sql);  // query est une fonction SQL et sert a faire une requête à la base de données et on stocke le resultat dans la variable resultat
                     $utilisateur = $resultat->fetch();  // fetch est aussi une fonction SQL et  sert a récupérer les données de la base de données
 
@@ -49,7 +48,7 @@
         <form>
 </div>
 
-<!-- ############################### REGISTER #################################################### -->
+
 
     <div class="container mt-5">
         <h2>Pas encore enregistré ? Utilisez ce formulaire d'inscription</h2>
@@ -70,8 +69,12 @@
                 include 'db_connect.php';
                 if (!empty($_POST['pseudo']) && !empty($_POST['password'])) {
                     if (strlen($_POST['pseudo']) > 3 && strlen($_POST['password']) > 4) {  // strlen comme son nom l'indique (string length)
-                        $hachage = hash('sha256', $_POST['password']);
-                        $sql = "INSERT INTO registered (username, mdpkey) VALUES ('" . $_POST['pseudo'] . "', '" . $hachage . "')";
+                        $salage =
+                            hash(
+                                'sha256',
+                                $_POST['password'],
+                            );
+                        $sql = "INSERT INTO registered (username, mdpkey) VALUES ('" . $_POST['pseudo'] . "', '" . $salage . "')";
                         $requete = $db_connexion->exec($sql);
                         header('Location: enterdata.php');
                         exit;  // sert à arrêter le code "net" pour pas charger executer le reste et evite des soucis... apparemment ?

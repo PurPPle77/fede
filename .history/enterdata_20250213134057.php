@@ -32,11 +32,8 @@ require 'db_connect.php';
 
 $sql = 'SELECT titre, date_publication FROM articles';
 $requete = $db_connexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-?>
 
-<?php
 foreach ($requete as $article) {
-    echo '<strong>' . $article['titre'] . '</strong> : Crée et publié le : ' . $article['date_publication'] . '<br>';
+    echo $article['titre'] . ' : Crée et publié le : ' . $article['date_publication'] . '<br>';
 }
 ?>
-

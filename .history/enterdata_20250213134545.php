@@ -36,7 +36,7 @@ $requete = $db_connexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 <?php
 foreach ($requete as $article) {
-    echo '<strong>' . $article['titre'] . '</strong> : Crée et publié le : ' . $article['date_publication'] . '<br>';
+    echo '<strong>' $article['titre'] . ' : Crée et publié le : ' . $article['date_publication'] . '<br>';
 }
-?>
+?></strong>
 
