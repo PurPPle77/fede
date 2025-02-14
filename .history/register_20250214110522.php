@@ -33,17 +33,16 @@
 
                     // la connexion à la base de données se fait maintenant apres avoir verifié qu'un utilisateur existe et un mdp sont bien entrés
                     include ('db_connect.php');
-
-                    $sql = "SELECT * FROM registered WHERE username = '$nom'";
+                    $hachage = password_hash($mdp, PASSWORD_DEFAULT);
+                    $sql = "SELECT * FROM registered WHERE username = '$nom' AND mdpkey = '$hachage'";
+                    password_verify($hachage);
                     $resultat = $db_connexion->query($sql);  // query est une fonction SQL et sert a faire une requête à la base de données et on stocke le resultat dans la variable resultat
                     $utilisateur = $resultat->fetch();  // fetch est aussi une fonction SQL et  sert a récupérer les données de la base de données
 
                     if ($utilisateur) {  // si l'utilisateur existe dans la base de donnée
-                        if (password_verify($mdp, $utilisateur['mdpkey'])) {  // je vérifie si le mdp entré correspond au mdp de l'user dans la bdd. C'est bien un double if car password_verify est obligatoirement couplé avec un if.
-                            header('Location: enterdata.php');  // Rediriger l'utilisateur vers la page de mon choix
-                        } else {
-                            echo "Nom d'utilisateur ou mot de passe incorrect.";
-                        }
+                        header('Location: enterdata.php');  // Rediriger l'utilisateur vers la page de mon choix
+                    } else {
+                        echo "Nom d'utilisateur ou mot de passe incorrect.";
                     }
                 }
                 ?>

@@ -33,17 +33,15 @@
 
                     // la connexion à la base de données se fait maintenant apres avoir verifié qu'un utilisateur existe et un mdp sont bien entrés
                     include ('db_connect.php');
-
-                    $sql = "SELECT * FROM registered WHERE username = '$nom'";
+                    $hachage = hash('sha256', $mdp);
+                    $sql = "SELECT * FROM registered WHERE username = '$nom' AND mdpkey = '$hachage'";
                     $resultat = $db_connexion->query($sql);  // query est une fonction SQL et sert a faire une requête à la base de données et on stocke le resultat dans la variable resultat
                     $utilisateur = $resultat->fetch();  // fetch est aussi une fonction SQL et  sert a récupérer les données de la base de données
 
                     if ($utilisateur) {  // si l'utilisateur existe dans la base de donnée
-                        if (password_verify($mdp, $utilisateur['mdpkey'])) {  // je vérifie si le mdp entré correspond au mdp de l'user dans la bdd. C'est bien un double if car password_verify est obligatoirement couplé avec un if.
-                            header('Location: enterdata.php');  // Rediriger l'utilisateur vers la page de mon choix
-                        } else {
-                            echo "Nom d'utilisateur ou mot de passe incorrect.";
-                        }
+                        header('Location: enterdata.php');  // Rediriger l'utilisateur vers la page de mon choix
+                    } else {
+                        echo "Nom d'utilisateur ou mot de passe incorrect.";
                     }
                 }
                 ?>
@@ -72,13 +70,13 @@
                 include 'db_connect.php';
                 if (!empty($_POST['pseudo']) && !empty($_POST['password'])) {
                     if (strlen($_POST['pseudo']) > 3 && strlen($_POST['password']) > 4) {  // strlen comme son nom l'indique (string length)
-                        $sql1 = 'SELECT username FROM registered WHERE username = "' . $_POST['pseudo'] . '"';
+                        $sql1 = 'SELECT username FROM registered WHERE username = ';
                         $requete1 = $db_connexion->query($sql1);
                         $exist = $requete1->fetch(PDO::FETCH_COLUMN);
                         if ($exist) {
                             echo 'Ce pseudo existe déjà';
                         } else {
-                            $hachage = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                            $hachage = hash('sha256', $_POST['password']);
                             $sql = "INSERT INTO registered (username, mdpkey) VALUES ('" . $_POST['pseudo'] . "', '" . $hachage . "')";
                             $requete = $db_connexion->exec($sql);
                             header('Location: enterdata.php');
@@ -99,4 +97,5 @@
     </div>
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

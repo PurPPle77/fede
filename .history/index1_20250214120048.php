@@ -16,14 +16,14 @@
   <meta charset="UTF-8">
   <meta name="Index" content="Index_Fédération_Sportive">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style1.css">
-  
+  <!-- <link rel="stylesheet" type="text/css" href="style1.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
   
 </head>
 
 <body>
-  
+  <div class="container justify-content-center">
   <header id="header1">
 
     <img src="./images/mainlogo.jpg" alt="Logo Fédération Sportive" id="mainlogo">
@@ -173,7 +173,7 @@ $articles = $db_connexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);  // fetchAll
 
  
   <script src="./script1.js"></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

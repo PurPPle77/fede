@@ -17,13 +17,13 @@
   <meta name="Index" content="Index_Fédération_Sportive">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style1.css">
-  
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  <link rel="stylesheet" type="text/css" href="lightbox.css">
 
   
 </head>
 
 <body>
-  
   <header id="header1">
 
     <img src="./images/mainlogo.jpg" alt="Logo Fédération Sportive" id="mainlogo">
@@ -57,7 +57,7 @@
     </figure>
 
   </header>
-</div>
+
   <div class="arianeetlogo">
     <nav aria-label="Page actuelle">
       <ul>
@@ -171,9 +171,10 @@ $articles = $db_connexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);  // fetchAll
     <p id="textecentré">2024. Joël Forestello</p>
   </footer>
 
- 
+  <script src="./jquery-3.7.1.js"></script>
   <script src="./script1.js"></script>
-  
+  <script src="./lightbox.js"></script>
+  <script src="./jquery.responsiveNav.js"></script>
 
 </body>
 

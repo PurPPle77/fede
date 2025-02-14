@@ -17,13 +17,13 @@
   <meta name="Index" content="Index_Fédération_Sportive">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style1.css">
-  
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  <link rel="stylesheet" type="text/css" href="lightbox.css">
 
   
 </head>
 
 <body>
-  
   <header id="header1">
 
     <img src="./images/mainlogo.jpg" alt="Logo Fédération Sportive" id="mainlogo">
@@ -57,7 +57,7 @@
     </figure>
 
   </header>
-</div>
+
   <div class="arianeetlogo">
     <nav aria-label="Page actuelle">
       <ul>
@@ -173,7 +173,7 @@ $articles = $db_connexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);  // fetchAll
 
  
   <script src="./script1.js"></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

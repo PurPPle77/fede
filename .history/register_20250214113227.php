@@ -39,7 +39,7 @@
                     $utilisateur = $resultat->fetch();  // fetch est aussi une fonction SQL et  sert a récupérer les données de la base de données
 
                     if ($utilisateur) {  // si l'utilisateur existe dans la base de donnée
-                        if (password_verify($mdp, $utilisateur['mdpkey'])) {  // je vérifie si le mdp entré correspond au mdp de l'user dans la bdd. C'est bien un double if car password_verify est obligatoirement couplé avec un if.
+                        if (password_verify($mdp, $utilisateur['mdpkey'])) {  // je vérifie si le mdp entré correspond au mdp de l'user dans la bdd. C'est bien un double if car password_verify est obligatoire couplé avec un if.
                             header('Location: enterdata.php');  // Rediriger l'utilisateur vers la page de mon choix
                         } else {
                             echo "Nom d'utilisateur ou mot de passe incorrect.";
